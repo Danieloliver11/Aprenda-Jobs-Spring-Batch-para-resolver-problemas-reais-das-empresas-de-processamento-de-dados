@@ -1,0 +1,47 @@
+# Ignore arquivos gerados pelo Maven
+/target/
+
+# Ignore arquivos do STS (Spring Tool Suite)
+/.classpath
+/.project
+/.settings/
+/.factorypath/
+
+# Ignore arquivos de configuração do VS Code
+/.vscode/
+
+# Ignore logs e arquivos temporários
+*.log
+*.tmp
+*.swp
+*.swo
+hs_err_pid*
+
+# Ignore arquivos de dependências do Maven e Gradle
+/.mvn/
+!/.mvn/wrapper/maven-wrapper.jar
+/.gradle/
+build/
+
+# Ignore arquivos do sistema operacional (Mac e Windows)
+.DS_Store
+Thumbs.db
+._*
+
+# Ignore arquivos de IDEs e editores comuns
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Ignore configurações do Eclipse
+/.metadata/
+/.recommenders/
+
+# Ignore arquivos gerados por testes
+/test-output/
+/out/
+
+# Ignore arquivos de ambiente virtual do Python (caso use)
+/venv/
+/.env

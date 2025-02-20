@@ -1,4 +1,4 @@
-package com.udemy.spring_batch.step.modele.dto;
+package com.udemy.spring_batch.modele.dto;
 
 public record ClienteDto(
 		

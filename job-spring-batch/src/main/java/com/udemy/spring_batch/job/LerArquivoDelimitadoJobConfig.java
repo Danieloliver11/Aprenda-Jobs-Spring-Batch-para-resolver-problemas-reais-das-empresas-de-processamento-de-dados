@@ -8,16 +8,18 @@ import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-//@Configuration
-public class LerArquivoLarguraFixaJobConfig {
+@Configuration
+public class LerArquivoDelimitadoJobConfig {
 	
-//	@Bean
-	Job lerArquivoLarguraFixaJob(JobRepository jobRepository, Step lerArquivoLarguraFixaStep ){
-		
-		return new JobBuilder("lerArquivoLarguraFixaJob",jobRepository)
-				.start(lerArquivoLarguraFixaStep)
+	@Bean
+	Job lerArquivoDelimitadoJobConfigs(JobRepository jobRepository, Step lerArquivoDelimitadoStepConfigs) {
+		return new JobBuilder("lerArquivoDelimitadoJobConfigs",jobRepository)
+				.start(lerArquivoDelimitadoStepConfigs)
 				.incrementer(new RunIdIncrementer())
 				.build();
+				
+
+		
 	}
 
 }

@@ -8,7 +8,7 @@ import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration 
+//@Configuration 
 public class BatchConfig {
 	
 	//tasklet = usado para tarefas simples.
@@ -18,7 +18,7 @@ public class BatchConfig {
 	
 	
 	
-	@Bean
+//	@Bean
   public Job imprimeOlaJob(JobRepository jobRepository, Step imprimeOlaStep) { 
       return new JobBuilder("imprimeOlaJob_2", jobRepository)
               .start(imprimeOlaStep)

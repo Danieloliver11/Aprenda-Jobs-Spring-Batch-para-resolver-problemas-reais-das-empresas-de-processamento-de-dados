@@ -9,10 +9,10 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 import com.udemy.spring_batch.tasklet.MinhasTaklet;
 
-@Configuration
+//@Configuration
 public class primeiroJobComStep {
 
-	@Bean
+//	@Bean
 	public Step imprimeOlaStep(JobRepository jobRepository, PlatformTransactionManager platformTransactionManager,
 			MinhasTaklet imprimeOlaTasklet) {
 		
@@ -20,13 +20,17 @@ public class primeiroJobComStep {
 				.build();
 	}
 	
-	
+		
 //	@Bean
-//	Job imprimirParImparJob(JobRepository jobRepository, Step imprimirParImparStep) {
-//		return new JobBuilder("imprimirParImparJob",jobRepository)
-//				.start(imprimirParImparStep)
-//				.incrementer(new RunIdIncrementer())
+//	Step imprimirParImparStep(JobRepository jobRepositry, PlatformTransactionManager platformTransactionManager) {
+//		
+//		return new StepBuilder("imprimirParImparStep",jobRepositry)
+//				.<Integer, String>chunk(10, platformTransactionManager) // Integer = tipo do item lido, String = tipo do item processado/escrito. O 1 é o tamanho do chunk.				
+//				.reader(contarAteDezReader())
+//				.processor(parOuImparProcessor())
+//				.writer(imprimeWriter())
 //				.build();
+//				
 //	}
 //	
 

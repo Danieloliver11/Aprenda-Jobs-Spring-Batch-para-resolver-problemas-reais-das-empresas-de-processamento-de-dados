@@ -27,8 +27,10 @@ public class LerArquivoDelimitadoReader {
                 .name("lerArquivoDelimitadoReaders")
                 .resource(arquivoClientes)
                 .delimited()
+                //.delimiter(";") // Especifica o delimitador como ";"
                 .names(new String[] {"nome", "sobreNome", "idade", "email"})
                 .targetType(ClienteDto.class)
+               // .linesToSkip(1) // Pula a primeira linha (cabeçalho)
                 .build();
     }
 

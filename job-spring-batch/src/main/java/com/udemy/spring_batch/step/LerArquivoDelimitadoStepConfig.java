@@ -11,23 +11,19 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 import com.udemy.spring_batch.modele.dto.ClienteDto;
 
-//@Configuration
-public class LerArquivoLarguraFixaStepConfig {
+@Configuration
+public class LerArquivoDelimitadoStepConfig {
 	
-	
-//	@Bean
-	Step lerArquivoLarguraFixaStep(JobRepository jobRepository, PlatformTransactionManager platformTransactionManager			
-			, FlatFileItemReader<ClienteDto> lerArquivoLarguraFixaReader,
-			ItemWriter<ClienteDto> meuItemWriter){
-
-		return new StepBuilder("lerArquivoLarguraFixaStep",jobRepository)
-				.<ClienteDto,ClienteDto>chunk(2,platformTransactionManager)
-				.reader(lerArquivoLarguraFixaReader)
-	            .writer(meuItemWriter)  
-				.build();
+	@Bean
+	Step lerArquivoDelimitadoStepConfigs(JobRepository jobRepository, PlatformTransactionManager platformTransactionManager,
+			 FlatFileItemReader<ClienteDto> lerArquivoDelimitadoReaders,
+			 ItemWriter<ClienteDto> meuItemWriter){
 		
+		return new StepBuilder("platformTransactionManager",jobRepository )
+				.<ClienteDto,ClienteDto>chunk(4,platformTransactionManager)
+				.reader(lerArquivoDelimitadoReaders)
+				.writer(meuItemWriter)
+				.build();
 	}
-	
-	
 
 }

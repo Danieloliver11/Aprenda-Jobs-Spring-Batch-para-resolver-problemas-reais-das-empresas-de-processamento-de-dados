@@ -25,8 +25,8 @@ projeto:
 batch:
   job:
     parameters:
-      arquivoClientes: "file:src/main/resources/clientes.txt"
-
+      arquivoClientes: "file:files/lientelimitado.txt"
+      
 logging:
   file:
     name: ./logs/batch.log
@@ -34,3 +34,6 @@ logging:
     rollingpolicy:
       max-history: 2
       max-file-size: 1MB
+  level:
+    org.springframework.batch: DEBUG
+    org.springframework.core.io: DEBUG

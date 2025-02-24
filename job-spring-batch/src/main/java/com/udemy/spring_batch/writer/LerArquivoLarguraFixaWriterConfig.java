@@ -4,7 +4,7 @@ import org.springframework.batch.item.ItemWriter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.udemy.spring_batch.step.modele.dto.ClienteDto;
+import com.udemy.spring_batch.modele.dto.ClienteDto;
 
 @Configuration
 public class LerArquivoLarguraFixaWriterConfig {

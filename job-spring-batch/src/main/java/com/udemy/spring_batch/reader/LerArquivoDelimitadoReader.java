@@ -10,14 +10,14 @@ import org.springframework.core.io.Resource;
 
 import com.udemy.spring_batch.modele.dto.ClienteDto;
 
-@Configuration
+//@Configuration
 public class LerArquivoDelimitadoReader {
 	
 
-//passado por arguments arquivoClientes=file:files/lientelimitado.txt
+//passado por arguments arquivoClientes=file:files/arquivoClientes.txt
 	
-    @Bean
-    @StepScope
+//    @Bean
+//    @StepScope
     public FlatFileItemReader<ClienteDto> lerArquivoLarguraFixaReader(@Value("#{jobParameters['arquivoClientes']}") Resource arquivoClientes) {
         if (arquivoClientes == null || !arquivoClientes.exists()) {
             throw new IllegalArgumentException("O parâmetro 'arquivoClientesLimitados' não foi fornecido ou o arquivo não existe.");

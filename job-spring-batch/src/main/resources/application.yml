@@ -25,7 +25,10 @@ projeto:
 batch:
   job:
     parameters:
-      arquivoClientes: "file:files/lientelimitado.txt"
+      arquivoClientes: "file:files/multiploFormato.txt"
+      
+      #passado por arguments arquivoClientes=file:files/multiploFormato.txt
+      
       
 logging:
   file:

@@ -40,9 +40,9 @@ public class ClienteTransacaoLineMapperConfig {
 	    fieldSetMappers.put("1*", fieldSetMapper(TransacaoDto.class));
 	    return fieldSetMappers;
 	}
-	private <T> FieldSetMapper<T> fieldSetMapper(Class<T> clazz) {
+	private <T> FieldSetMapper<T> fieldSetMapper(Class<T> classe) {
 	    BeanWrapperFieldSetMapper<T> fieldSetMapper = new BeanWrapperFieldSetMapper<>();
-	    fieldSetMapper.setTargetType(clazz);
+	    fieldSetMapper.setTargetType(classe);
 	    return fieldSetMapper;
 	}
 

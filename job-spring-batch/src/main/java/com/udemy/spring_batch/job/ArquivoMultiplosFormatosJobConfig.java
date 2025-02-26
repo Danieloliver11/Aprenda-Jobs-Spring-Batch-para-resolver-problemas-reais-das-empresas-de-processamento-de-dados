@@ -8,17 +8,15 @@ import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-//@Configuration
-public class LerArquivoDelimitadoJobConfig {
+@Configuration
+public class ArquivoMultiplosFormatosJobConfig {
 	
-//	@Bean
-	Job lerArquivoDelimitadoJobConfigs(JobRepository jobRepository, Step lerArquivoDelimitadoStep) {
-		return new JobBuilder("lerArquivoDelimitadoJobConfigs",jobRepository)
-				.start(lerArquivoDelimitadoStep)
+	@Bean
+	Job arquivoMultiplosFormatosJob(JobRepository jobRepository, Step arquivoMultiplosFormatosStep) {
+		return new JobBuilder("arquivoMultiplosFormatosJob",jobRepository)
+				.start(arquivoMultiplosFormatosStep)
 				.incrementer(new RunIdIncrementer())
 				.build();
-				
-
 		
 	}
 

@@ -11,10 +11,10 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 import com.udemy.spring_batch.modele.dto.ClienteDto;
 
-@Configuration
+//@Configuration
 public class LerArquivoDelimitadoStepConfig {
 	
-	@Bean
+//	@Bean
 	Step lerArquivoDelimitadoStepConfigs(JobRepository jobRepository, PlatformTransactionManager platformTransactionManager,
 			 FlatFileItemReader<ClienteDto> lerArquivoDelimitadoReaders,
 			 ItemWriter<ClienteDto> meuItemWriter){

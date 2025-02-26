@@ -1,5 +1,7 @@
 package com.udemy.spring_batch.modele.dto;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public  class ClienteDto {
 
@@ -7,6 +9,7 @@ public  class ClienteDto {
     private String sobreNome;
     private Integer idade;
     private String email;
+    private List<TransacaoDto> transacoes = new ArrayList<>();
     
     public ClienteDto() {
     }
@@ -51,5 +54,24 @@ public  class ClienteDto {
     public void setEmail(String email) {
         this.email = email;
     }
+
+
+	public List<TransacaoDto> getTransacoes() {
+		return transacoes;
+	}
+
+
+	public void setTransacoes(List<TransacaoDto> transacoes) {
+		this.transacoes = transacoes;
+	}
+
+
+	@Override
+	public String toString() {
+		return "ClienteDto [nome=" + nome + ", sobreNome=" + sobreNome + ", idade=" + idade + ", email=" + email
+				+ ", transacoes=" + transacoes + "]";
+	}
+    
+    
 
 }

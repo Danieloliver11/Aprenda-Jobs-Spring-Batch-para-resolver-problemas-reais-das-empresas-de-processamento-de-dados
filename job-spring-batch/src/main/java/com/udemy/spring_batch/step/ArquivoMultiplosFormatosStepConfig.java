@@ -10,18 +10,20 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import com.udemy.spring_batch.modele.dto.ClienteDto;
+import com.udemy.spring_batch.reader.ArquivoClienteTransacaoReader;
 
 @Configuration
 public class ArquivoMultiplosFormatosStepConfig {
 	
 	@Bean
-	Step lerArquivoDelimitadoStep(JobRepository jobRepository, PlatformTransactionManager platformTransactionManager,
-		 FlatFileItemReader<ClienteDto> lerArquivoDelimitadoReaders,
+	Step lerArquivoDelimitadoTransacaoStep(JobRepository jobRepository, PlatformTransactionManager platformTransactionManager,
+		 FlatFileItemReader lerArquivoDelimitadoReaders,
 		 ItemWriter<Object> writer){
 	
-	return new StepBuilder("lerArquivoDelimitadoStep",jobRepository )
+	
+		return new StepBuilder("lerArquivoDelimitadoTransacaoStep",jobRepository )
 			.<ClienteDto,ClienteDto>chunk(4,platformTransactionManager)
-			.reader(lerArquivoDelimitadoReaders)
+			.reader(new ArquivoClienteTransacaoReader(lerArquivoDelimitadoReaders))
 			.writer(writer)
 			.build();
 }

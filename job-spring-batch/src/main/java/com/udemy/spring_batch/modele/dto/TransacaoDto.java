@@ -41,4 +41,9 @@ public class TransacaoDto {
 		this.valor = valor;
 	}
 
+	@Override
+	public String toString() {
+		return "TransacaoDto [id=" + id + ", descricao=" + descricao + ", valor=" + valor + "]";
+	}
+
 }

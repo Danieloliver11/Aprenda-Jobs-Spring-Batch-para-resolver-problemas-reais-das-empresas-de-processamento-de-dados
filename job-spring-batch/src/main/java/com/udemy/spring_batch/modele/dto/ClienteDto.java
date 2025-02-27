@@ -7,7 +7,7 @@ public  class ClienteDto {
 
     private String nome;
     private String sobreNome;
-    private Integer idade;
+    private String idade;
     private String email;
     private List<TransacaoDto> transacoes = new ArrayList<>();
     
@@ -15,7 +15,7 @@ public  class ClienteDto {
     }
 
     // Construtor com argumentos (opcional)
-    public ClienteDto(String nome, String sobreNome, Integer idade, String email) {
+    public ClienteDto(String nome, String sobreNome, String idade, String email) {
         this.nome = nome;
         this.sobreNome = sobreNome;
         this.idade = idade;
@@ -39,11 +39,11 @@ public  class ClienteDto {
         this.sobreNome = sobreNome;
     }
 
-    public Integer getIdade() {
+    public String getIdade() {
         return idade;
     }
 
-    public void setIdade(Integer idade) {
+    public void setIdade(String idade) {
         this.idade = idade;
     }
 
